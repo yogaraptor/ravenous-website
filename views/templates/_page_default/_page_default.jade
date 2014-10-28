@@ -15,7 +15,11 @@ block page_vars
 - var bodyClass = "page-"+page.id
 
 doctype html
+//if IE 9
+	<html class="ie9">
+// [if gt IE 9] <!
 html(lang="en")
+	// <![endif]
 	head
 		title #{page.title}
 		meta(charset="utf-8")

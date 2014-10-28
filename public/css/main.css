@@ -49,6 +49,7 @@ html {
 body {
   margin: 0;
   font-size: 16px;
+  font-size: 16px;
   font-size: 1rem;
 }
 
@@ -180,6 +181,7 @@ dt {
 
 dd {
   margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
   margin: 0 0 0 0.625rem;
   font-weight: bold;
 }
@@ -217,6 +219,7 @@ p,
 li {
   margin: 0 0 1em 0;
   font-family: "TallysFont",serif;
+  font-size: 18px;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.5;
@@ -262,6 +265,16 @@ label textarea {
   font-size: 1em;
 }
 
+.ie9 img[src*=".svg"] {
+  width: 100%;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"] {
+    width: 100%;
+  }
+}
+
 code {
   color: #5c5c5c;
 }
@@ -270,6 +283,7 @@ pre code {
   display: block;
   padding: 0.5em;
   background: #F0F0F0;
+  font-size: 16px;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -494,11 +508,13 @@ h3 {
 
 h1 {
   font-size: 24px;
+  font-size: 24px;
   font-size: 1.5rem;
 }
 
 h2,
 .section .section-heading h1 {
+  font-size: 18px;
   font-size: 18px;
   font-size: 1.125rem;
   letter-spacing: 0.33em;
@@ -507,12 +523,14 @@ h2,
 h3,
 .post-teaser-title {
   font-size: 16px;
+  font-size: 16px;
   font-size: 1rem;
   letter-spacing: 0.167em;
 }
 
 h4,
 .section .section-heading h2 {
+  font-size: 14px;
   font-size: 14px;
   font-size: 0.875rem;
   letter-spacing: 0.1em;
@@ -537,6 +555,7 @@ a:link {
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
   font-size: 12.8px;
+  font-size: 12.8px;
   font-size: 0.8rem;
   text-align: center;
 }
@@ -552,6 +571,7 @@ a.more:after {
 }
 
 .page-title {
+  font-size: 32px;
   font-size: 32px;
   font-size: 2rem;
   font-weight: bold;
@@ -573,6 +593,7 @@ figcaption {
 figure :not(.content-img) img,
 figure .content-img {
   margin-bottom: 10px;
+  margin-bottom: 10px;
   margin-bottom: 0.625rem;
 }
 
@@ -586,6 +607,7 @@ figure .content-img {
 }
 
 .intro p {
+  font-size: 32px;
   font-size: 32px;
   font-size: 2rem;
 }
@@ -621,6 +643,7 @@ figure .content-img {
   vertical-align: top;
   width: 30%;
   font-size: 16px;
+  font-size: 16px;
   font-size: 1rem;
   text-align: left;
 }
@@ -642,6 +665,7 @@ figure .content-img {
 
 .main-nav a {
   display: block;
+  padding: 30px 5px;
   padding: 30px 5px;
   padding: 1.875rem 0.3125rem;
   color: #fff;
@@ -677,6 +701,7 @@ figure .content-img {
   display: inline-block;
   vertical-align: top;
   width: 25%;
+  font-size: 16px;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -732,6 +757,7 @@ figure .content-img {
 .post-teaser-date {
   font-family: "Libre Baskerville",serif;
   font-size: 12.8px;
+  font-size: 12.8px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: none;
@@ -776,10 +802,12 @@ figure .content-img {
 
 .post-teaser-teaser {
   font-size: 18px;
+  font-size: 18px;
   font-size: 1.125rem;
 }
 
 .post-teaser .post-teaser-date {
+  margin-right: 20px;
   margin-right: 20px;
   margin-right: 1.25rem;
 }
@@ -787,6 +815,7 @@ figure .content-img {
 .post-teaser .post-teaser-title,
 .post-teaser .post-teaser-date {
   display: inline-block;
+  margin-bottom: 20px;
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
 }
@@ -843,6 +872,7 @@ figure .content-img {
   text-transform: none;
   font-weight: bold;
   padding: 20px 16px;
+  padding: 20px 16px;
   padding: 1.25rem 1rem;
   text-align: center;
 }
@@ -851,12 +881,14 @@ figure .content-img {
   font-family: "Libre Baskerville",serif;
   font-style: italic;
   font-size: 12.8px;
+  font-size: 12.8px;
   font-size: 0.8rem;
   color: #5c5c5c;
   text-align: center;
 }
 
 .project-teaser-content {
+  padding: 0 20px;
   padding: 0 20px;
   padding: 0 1.25rem;
 }
@@ -928,8 +960,10 @@ figure .content-img {
 .form-contact label input,
 .form-contact label textarea {
   padding: 10px;
+  padding: 10px;
   padding: 0.625rem;
   resize: none;
+  font-size: 24px;
   font-size: 24px;
   font-size: 1.5rem;
 }
@@ -996,6 +1030,7 @@ figure .content-img {
 
 .form-contact fieldset li {
   margin-bottom: 30px;
+  margin-bottom: 30px;
   margin-bottom: 1.875rem;
 }
 
@@ -1025,6 +1060,7 @@ figure .content-img {
 
 .main-content .section {
   margin-bottom: 60px;
+  margin-bottom: 60px;
   margin-bottom: 3.75rem;
 }
 
@@ -1035,6 +1071,7 @@ figure .content-img {
 .main-header .logo {
   display: block;
   position: relative;
+  top: 40px;
   top: 40px;
   top: 2.5rem;
   z-index: 1;
@@ -1077,6 +1114,7 @@ figure .content-img {
 .section .section-heading {
   max-width: 80%;
   margin: 5px auto 40px auto;
+  margin: 5px auto 40px auto;
   margin: 0.3125rem auto 2.5rem auto;
 }
 
@@ -1097,6 +1135,7 @@ figure .content-img {
 
 .section .section-heading h1 {
   margin-bottom: 10px;
+  margin-bottom: 10px;
   margin-bottom: 0.625rem;
 }
 
@@ -1114,6 +1153,7 @@ figure .content-img {
 
 .post h1 {
   font-size: 32px;
+  font-size: 32px;
   font-size: 2rem;
   font-weight: bold;
   text-transform: none;
@@ -1124,6 +1164,7 @@ figure .content-img {
 .post-date {
   font-family: "Libre Baskerville",serif;
   font-size: 18px;
+  font-size: 18px;
   font-size: 1.125rem;
   color: #8f8f8f;
 }
@@ -1133,17 +1174,20 @@ figure .content-img {
   letter-spacing: normal;
   text-transform: none;
   font-size: 32px;
+  font-size: 32px;
   font-size: 2rem;
   font-weight: bold;
 }
 
 .post-content h3 {
   font-size: 24px;
+  font-size: 24px;
   font-size: 1.5rem;
 }
 
 .post-content p,
 .post-content li {
+  font-size: 24px;
   font-size: 24px;
   font-size: 1.5rem;
 }
@@ -1160,17 +1204,21 @@ figure .content-img {
 
 .post-content h2 {
   margin-top: 30px;
+  margin-top: 30px;
   margin-top: 1.875rem;
+  margin-bottom: 20px;
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
 }
 
 .post h1 {
   margin-bottom: 20px;
+  margin-bottom: 20px;
   margin-bottom: 1.25rem;
 }
 
 .post .post-date {
+  margin-bottom: 40px;
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
 }
@@ -1184,6 +1232,7 @@ figure .content-img {
   display: inline-block;
   vertical-align: top;
   width: 30%;
+  font-size: 16px;
   font-size: 16px;
   font-size: 1rem;
   text-align: left;
@@ -1220,6 +1269,7 @@ figure .content-img {
   display: inline-block;
   vertical-align: top;
   width: 30%;
+  font-size: 16px;
   font-size: 16px;
   font-size: 1rem;
   text-align: left;
@@ -1283,16 +1333,19 @@ body .main-content-inner {
 
 .page-blog .post-teaser {
   margin-bottom: 60px;
+  margin-bottom: 60px;
   margin-bottom: 3.75rem;
 }
 
 .page-blog .post-teaser .post-teaser-title {
+  margin-bottom: 10px;
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
 }
 
 .page-blog .post-teaser:after {
   display: block;
+  margin-top: 60px;
   margin-top: 60px;
   margin-top: 3.75rem;
   text-align: center;
@@ -1301,15 +1354,18 @@ body .main-content-inner {
 
 .project-teasers {
   margin-bottom: 40px;
+  margin-bottom: 40px;
   margin-bottom: 2.5rem;
 }
 
 .post-teasers {
   margin-bottom: 20px;
+  margin-bottom: 20px;
   margin-bottom: 1.25rem;
 }
 
 .project-teaser {
+  margin-bottom: 40px;
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
 }
