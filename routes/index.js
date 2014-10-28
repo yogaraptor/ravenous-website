@@ -20,11 +20,7 @@ router.get('/', function(req, res) {
   res.render('pages/_home/_home', {
     pretty: true,
   	projects: projects,
-  	posts: posts,
-  	page: {
-  		title: 'Home',
-      description: 'This is the portfolio of Tom Jenkins, freelance web developer based in Manchester. I bet he promised you coffee and cake. Good luck; he hasn\'t fed me in years.'
-  	}
+  	posts: posts
   });
 });
 
@@ -33,11 +29,7 @@ router.get('/about', function(req, res) {
   res.render('pages/_about/_about', {
     pretty: true,
   	projects: projects,
-  	posts: posts,
-  	page: {
-  		title: 'About',
-      description: 'Tom is an outdoorsy, animal-loving, tome-reading software engineer.'
-  	}
+  	posts: posts
   });
 });
 
@@ -46,11 +38,7 @@ router.get('/projects', function(req, res) {
   res.render('pages/_projects/_projects', {
     pretty: true,
   	projects: projects,
-  	posts: posts,
-  	page: {
-  		title: 'Projects',
-      description: 'A showcase of web, mobile and utility wonders.'
-  	}
+  	posts: posts
   });
 });
 
@@ -58,11 +46,7 @@ router.get('/projects', function(req, res) {
 router.get('/blog', function(req, res) {
   res.render('pages/_blog/_blog', {
   	projects: projects,
-  	posts: posts,
-  	page: {
-  		title: 'Blog',
-      description: 'Musings and experiments in front-end and NodeJS.'
-  	}
+  	posts: posts
   });
 });
 
