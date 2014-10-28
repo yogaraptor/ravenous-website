@@ -1,0 +1,15 @@
+//-
+	@file Defines a Post mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+
+//- Definition
+mixin post(post)
+
+	- var datef = new Date(post.date).toString().split(' ').slice(0, 4).join(' ');
+
+	article.post
+		h1!= post.title
+		.post-date #{datef}
+		.post-content!= post.content

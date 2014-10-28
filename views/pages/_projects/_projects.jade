@@ -1,0 +1,23 @@
+//-
+	@file Page instance: Projects template 
+	@extends _page_default/_page_default
+
+//- Page dependencies
+include ../../molecules/_project_teaser/_project_teaser
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	- var page = {}
+	- page.id = "work"
+	- page.title = "Ravenous - Work"
+
+
+//- Content block
+block content
+
+	.project-teasers
+		each project in projects
+			+project_teaser(project.title, project.uri, project.images[0], project.content, true)

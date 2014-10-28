@@ -1,0 +1,15 @@
+//-
+	@file Defines a Page section mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+
+//- Definition
+mixin page_section(heading1, heading2)
+
+	section&attributes(attributes)
+		.section-heading
+			h1!= heading1
+			h2!= heading2
+
+		block

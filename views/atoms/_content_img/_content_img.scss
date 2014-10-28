@@ -1,0 +1,11 @@
+/**
+ * @file Content image style
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.content-img {
+	@include frame;
+	img {
+		display: block;
+	}
+}

@@ -1,0 +1,19 @@
+/**
+ * @file Post teaser list
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.post-teasers {
+
+	@include autogrid(30%);
+
+	@media screen and (max-width: 800px) {
+		.post-teaser {
+			float: none;
+			width: auto;
+			margin-left: 0;
+			margin-right: 0;
+			margin-bottom: $wsunit * 2;
+		}
+	}
+}

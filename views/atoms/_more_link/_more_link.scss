@@ -1,0 +1,15 @@
+/**
+ * @file Defines styles for the More link component
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+/* More links */
+.more, .more a {
+	color: #808080;
+	font-family: 'Libre Baskerville', serif;
+	font-style: italic;
+	font-size: $font-size-small;
+	text-align: center;
+}
+.more a:after, a.more:after { content: ' »'; }
+.more:hover, .more a:hover { color: #000; }

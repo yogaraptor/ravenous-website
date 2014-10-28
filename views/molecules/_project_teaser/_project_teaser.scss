@@ -1,0 +1,44 @@
+/**
+ * @file Defines styles for the Project teaser page
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.project-teaser-img {
+	@include frame;
+
+	img {
+		filter: grayscale(60%);
+		transition: all 0.2s;
+	}
+	&:hover img {
+		filter: grayscale(40%);
+	}
+}
+
+.project-teaser-title {
+	@extend %h;
+	text-transform: none;
+	font-weight: bold;
+
+	// Layout
+	padding: $wsunit $wsunit * 0.8;
+	text-align: center;
+}
+
+.project-teaser-content p {
+	font-family: $font-family-alt2;
+	font-style: italic;
+	font-size: $font-size-small;
+	color: $middarkgrey;
+	text-align: center;
+}
+
+.project-teaser-content {
+	padding: 0 $wsunit;
+}
+
+.project-teaser {
+	.project-teaser-img {
+		display: block;
+	}
+}

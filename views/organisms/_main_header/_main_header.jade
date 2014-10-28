@@ -1,0 +1,16 @@
+//-
+	@file Defines a Main header mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+include ../../atoms/_logo/_logo
+include ../../molecules/_main_nav/_main_nav
+
+//- Definition
+mixin main_header()
+
+	header.main-header
+		.main-header-inner
+			+logo()
+			+main_nav()
+

@@ -1,0 +1,47 @@
+/**
+ * @file Defines styles for the Page section component
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.section {
+	padding-top: 2em;
+	background: url('../img/bg-separator.png') 50% 0 no-repeat;
+
+	// Layout
+	.section-heading {
+		max-width: 80%;
+		margin: $wsunit / 4 auto $wsunit * 2 auto;
+	}
+	
+}
+.section .section-heading {
+	
+
+	h1 {
+		@extend %h2;
+	}
+	h2 {
+		@extend %h4;
+		font-family: 'Libre Baskerville', serif;
+		font-style: italic;
+		text-transform: none;
+		color: $midgrey;
+	}
+
+	// Layout
+	text-align: center;
+	h1 {
+		margin-bottom: $wsunit / 2;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	.section .section-heading h3 { display: none; }
+}
+
+@media screen and (max-width: 600px) {
+	.section .section-heading {
+		max-width: none;
+	}
+}

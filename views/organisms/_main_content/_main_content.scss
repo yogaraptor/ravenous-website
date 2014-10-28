@@ -1,0 +1,15 @@
+/**
+ * @file Main content wrapper
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+/* Content */
+.main-content {
+	padding: 4em 2em 2em 2em;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+
+	.section {
+		margin-bottom: $wsunit * 3;
+	}
+}

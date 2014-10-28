@@ -1,0 +1,37 @@
+/**
+ * @file Defines styles for the Post teaser component
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.post-teaser-title {
+	@extend %h3;
+	font-weight: bold;
+}
+
+.post-teaser-date {
+	font-family: $font-family-alt2;
+	font-size: $font-size-small;
+	font-weight: $mediumfontweight;
+	text-transform: none;
+	color: $midgrey;
+}
+
+.post-teaser-img {
+	@include frame;
+}
+
+.post-teaser-teaser {
+	font-size: $font-size-large;
+}
+
+.post-teaser {
+	// Layout
+	.post-teaser-date {
+		margin-right: $wsunit;
+	}
+	.post-teaser-title,
+	.post-teaser-date {
+		display: inline-block;
+		margin-bottom: $wsunit;
+	}
+}

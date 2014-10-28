@@ -1,0 +1,33 @@
+/**
+ * @file About page styles
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.page-about {
+
+	.main-content-inner {
+
+		// Layout images
+		text-align: center;
+
+		figure {
+			display: inline-block;
+		}
+
+		@media screen and (min-width: 1000px) {
+			text-align: justify;
+			// Force justify of single-row grids
+			&::after {
+				content: '';
+				display: inline-block;
+				width: 100%;
+			}
+
+			figure {
+				width: 45%;
+				margin: 0 0 $wsunit * 2 0;		
+			}
+		}
+	}
+	
+}

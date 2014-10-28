@@ -1,0 +1,18 @@
+/**
+ * @file Figure styles
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+figcaption {
+	font-family: $font-family-alt2;
+	font-style: italic;
+	text-align: center;
+}
+
+figure {
+	// Layout
+	:not(.content-img) img,
+	.content-img {
+		margin-bottom: $wsunit / 2;
+	}
+}

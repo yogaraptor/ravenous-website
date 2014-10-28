@@ -1,0 +1,28 @@
+/**
+ * @file Defines styles for the Intro page
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+
+.intro em {
+	color: #000;
+	font-style: normal;
+}
+.intro-signature {
+	color: $midgrey;
+}
+
+.intro p {
+	font-size: 2rem;
+
+	@media screen and (max-width: 800px) {
+		font-size: 1.5rem;
+	}
+	@media screen and (max-width: 600px) {
+		font-size: 1.25rem
+	}
+}
+
+.intro {
+	text-align: center;
+}

@@ -1,0 +1,44 @@
+//-
+	@file Page instance: Blog template 
+	@extends _page_default/_page_default
+
+//- Page dependencies
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	- var page = {}
+	- page.id = "about"
+	- page.title = "Ravenous - About"
+
+
+//- Content block
+block content
+
+	#about.section
+		.section-heading
+			h1  A little bit about me 
+			h2
+				| In four thousand and twenty one words
+
+	figure
+		.content-img
+			img(alt="I grew up around people who loved to get out and about.", src="content/about/tom.jpg")
+		figcaption I still love to do this
+
+	figure
+		.content-img
+			img(alt="And that has stuck with me.", src="content/about/tom2.jpg")
+		figcaption Now sometimes I do this
+
+	figure
+		.content-img
+			img(alt="The house is always well-stocked with various teas.", src="content/about/tom3.jpg")
+		figcaption I really like this
+
+	figure
+		.content-img
+			img(alt="I'm an avid reader.", src="content/about/tom4.jpg")
+		figcaption And often hide away with these.

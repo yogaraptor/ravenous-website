@@ -1,0 +1,20 @@
+/**
+ * @file Project teaser list
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.project-teasers {
+
+	@include clearfix;
+	@include autogrid(30%);
+	@media screen and (max-width: 600px) {
+		.project-teaser {
+			float: none;
+			width: 380px;
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: $wsunit * 2;
+		}
+	}
+}

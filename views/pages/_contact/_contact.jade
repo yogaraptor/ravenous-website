@@ -1,0 +1,45 @@
+//-
+	@file Page instance: Blog template 
+	@extends _page_default/_page_default
+
+//- Page dependencies
+include ../../organisms/_contact_form/_contact_form
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	- var page = {}
+	- page.id = "contact"
+	- page.title = "Ravenous - Contact"
+
+
+//- Content block
+block content
+
+	- console.log('email#', invalidEmail)
+	- console.log('fields', missingFields)
+	#contact.section
+		.section-heading(class=invalidEmail || missingFields ? 'is-error' : '')
+			if sent
+				h1  Message in flight
+				h2
+					| Looks like you gave the Raven the slip - well done! I'll be in touch as soon as I can.
+			else if (invalidEmail)
+				h1  Uh-oh! The Raven doesn't like that!
+				h2
+					| Your email address dosn't look quite right. Give it a quick check and try again. But quickly; the Raven grows impatient&hellip;
+			else if (missingFields)
+				h1 Uh-oh! The Raven doesn't like that!
+				h2
+					| Looks like you missed some crucial info - please check below. The Raven requires all the fields except the phone number&hellip;
+			else
+				h1  Talk to me 
+				h2
+					| If you're really quiet, you should be able to fill in the form below without The Raven
+					| noticing. I appreciate all correspondence (his Balefulness isn't much for chit-chat)
+					| and will get back to you as soon as I can.
+
+	if (!sent)
+		+contact_form(submission, missingFields, invalidEmail)
