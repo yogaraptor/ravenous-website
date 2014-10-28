@@ -7,10 +7,9 @@ include ../../atoms/_logo/_logo
 include ../../molecules/_main_nav/_main_nav
 
 //- Definition
-mixin main_header()
-
+mixin main_header(section)
 	header.main-header
 		.main-header-inner
 			+logo()
-			+main_nav()
+			+main_nav(section)
 

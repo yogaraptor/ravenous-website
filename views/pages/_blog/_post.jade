@@ -12,7 +12,8 @@ extends ../../templates/_page_default/_page_default
 block page_vars
 	- var page = {}
 	- page.id = "blog"
-	- page.title = "Ravenous - Blog: " + post.title
+	- page.title = post.title
+	- page.section = "blog"
 
 
 //- Content block

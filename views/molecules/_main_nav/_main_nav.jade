@@ -5,15 +5,15 @@
 //- Dependencies
 
 //- Definition
-mixin main_nav()
+mixin main_nav(section)
 
 	nav.main-nav
 		ul
-			li
+			li(class=section == 'about' ? 'is-current' : '')
 				a(href="/about") About
-			li
+			li(class=section == 'projects' ? 'is-current' : '')
 				a(href="/projects") Work
-			li
+			li(class=section == 'blog' ? 'is-current' : '')
 				a(href="/blog") Blog
-			li
+			li(class=section == 'contact' ? 'is-current' : '')
 				a(href="/contact") Contact
