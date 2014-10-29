@@ -46,9 +46,10 @@ module.exports = function(req, res, next) {
 			var msg = "Name: "+query.name+"\nPhone: "+query.phone+"\nEmail:"+query.email+"\nMessage: "+query.message;
 			var mailOptions = {
 				from: query.email,
+				replyTo: query.email,
 				to: config.myemail,
 				subject: '[CAW!] ' + query.subject,
-				text: msg
+				text: msg,
 			};
 
 			// Send mail
