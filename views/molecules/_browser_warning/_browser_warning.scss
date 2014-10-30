@@ -1,0 +1,19 @@
+/**
+ * @file Browser warning styles
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+.browser-warning {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	padding: $wsunit / 2;
+	background: $error-fg;
+	color: #fff;
+	font-family: $font-family-alt2;
+	font-size: $font-size-small;
+	font-style: italic;
+	text-align: center;
+}
