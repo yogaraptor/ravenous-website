@@ -2,6 +2,7 @@
 	@file Defines the default page template
 
 //- Template dependencies
+include ../../molecules/_browser_warning/_browser_warning
 include ../../organisms/_main_header/_main_header
 
 //- Default vars
@@ -15,11 +16,7 @@ block page_vars
 - var bodyClass = "page-"+page.id
 
 doctype html
-//if IE 9
-	<html class="ie9">
-// [if gt IE 9] <!
-html(lang="en")
-	// <![endif]
+html
 	head
 		title #{page.title}
 		meta(charset="utf-8")
@@ -33,12 +30,15 @@ html(lang="en")
 
 		link(href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic", rel="stylesheet", type="text/css")
 
-		// if lt IE 9
-			script(src="/js/ie/eventlistener.js")
-			script(src="/js/ie/selectivizr-min.js")
-			script(src="/js/ie/respond.min.js")
+		<!--[if IE 9]>
+		<style type="text/css">img[src*=".svg"] { width: 100%; }</style>
+		<![endif]-->
 
 	body(class=bodyClass)
+
+		<!--[if lt IE 9]>
+		+browser_warning()
+		<![endif]-->
 
 		+main_header(page.section)
 
