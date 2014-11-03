@@ -1,0 +1,25 @@
+//-
+	@file Page instance: Blog template 
+	@extends _page_default/_page_default
+
+//- Page dependencies
+include ../../organisms/_contact_form/_contact_form
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	- var page = {}
+	- page.id = "contact"
+	- page.title = "Ravenous - Contact"
+
+
+//- Content block
+block content
+
+	#contact.section
+		.section-heading
+			h1  Message in flight
+			h2
+				| Looks like you gave the Raven the slip - well done! I'll be in touch as soon as I can.

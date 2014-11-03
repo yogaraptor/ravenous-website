@@ -23,16 +23,11 @@
 		transition: all 0.2s;
 	}
 
-	&.is-active {
-		.label-text {
-			top: -2.5em;
-			color: #303030;
-		}
-	}
+	&.is-active,
 	&.is-filled {
 		.label-text {
-			color: transparent;
-			z-index: -1;
+			top: -1.5em;
+			color: #303030;
 		}
 	}
 
@@ -53,7 +48,6 @@
 		transform: translate3d(0, -2.5em, 0);
 	}
 }
-
 
 
 

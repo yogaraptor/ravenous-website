@@ -1,0 +1,19 @@
+//-
+	@file Defines a Main nav mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+
+//- Definition
+mixin main_nav(section)
+
+	nav.main-nav
+		ul
+			li(class=section == 'about' ? 'is-current' : '')
+				a(href="/about") About
+			li(class=section == 'projects' ? 'is-current' : '')
+				a(href="/projects") Work
+			li(class=section == 'blog' ? 'is-current' : '')
+				a(href="/blog") Blog
+			li(class=section == 'contact' ? 'is-current' : '')
+				a(href="/contact") Contact

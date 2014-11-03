@@ -1,2 +1,5 @@
 config.js
 node_modules
+.sass-cache
+public/*
+!public/favicon.png

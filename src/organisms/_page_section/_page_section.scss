@@ -27,6 +27,9 @@
 		text-transform: none;
 		color: $midgrey;
 	}
+	&.is-error {
+		color: #ef4020;
+	}
 
 	// Layout
 	text-align: center;

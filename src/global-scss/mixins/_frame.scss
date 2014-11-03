@@ -1,0 +1,30 @@
+/**
+ * @file Frame mixin
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+
+@mixin frame {
+	display: inline-block;
+	position: relative;
+	border: none;
+
+	&:after {
+		position: absolute;
+		left: 0; top: 0; right: 0; bottom: 0; z-index: 1;
+		background: url('../img/bg-frame-nw.png') 0 0 no-repeat,
+					url('../img/bg-frame-ne.png') 100% 0 no-repeat,
+					url('../img/bg-frame-se.png') 100% 100% no-repeat,
+					url('../img/bg-frame-sw.png') 0 100% no-repeat,
+					url('../img/bg-frame-ns.png') 0 0 repeat-x,
+					url('../img/bg-frame-ns.png') 0 100% repeat-x,
+					url('../img/bg-frame-ew.png') 100% 0 repeat-y,
+					url('../img/bg-frame-ew.png') 0 0 repeat-y;
+		content: '';
+	}
+	& input { position: relative; z-index: 2; }
+	& img { display: block; }
+	& > * { position: relative; z-index: 1;}
+	& input,
+	& textarea { border: none; }
+}
