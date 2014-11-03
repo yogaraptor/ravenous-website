@@ -6,5 +6,6 @@ module.exports = {
 			user: '',
 			pass: ''
 		}
-	}
+	},
+	analyticsCode: 'UA-XXXXXXXX'
 };
