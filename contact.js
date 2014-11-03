@@ -12,11 +12,7 @@ module.exports = function(req, res, next) {
 
 	var renderOptions = {
 		sent: false,
-	 	pretty: true,
-		page: {
-			title: 'Contact',
-			description: 'Tiptoe past the sleeping Raven and post a message through my door...'
-		}
+	 	pretty: true
 	};
 
 	// Parse URL for query string
@@ -50,9 +46,10 @@ module.exports = function(req, res, next) {
 			var msg = "Name: "+query.name+"\nPhone: "+query.phone+"\nEmail:"+query.email+"\nMessage: "+query.message;
 			var mailOptions = {
 				from: query.email,
+				replyTo: query.email,
 				to: config.myemail,
 				subject: '[CAW!] ' + query.subject,
-				text: msg
+				text: msg,
 			};
 
 			// Send mail
