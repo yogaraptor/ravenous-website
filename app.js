@@ -1,9 +1,12 @@
+var config = require('./config');
 var express = require('express');
+var url = require('url');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var ua = require('universal-analytics');
 
 var routes = require('./routes/index');
 
@@ -19,8 +22,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// Analytics
+app.use(function (req, res, next) {
+    var urlParts = url.parse(req.url, true);
+    var visitor = ua(config.analyticsCode);
+    visitor.pageview(urlParts.pathname).send();
+    next();
+});
+// Static files
 app.use(express.static(path.join(__dirname, 'public')));
-
+// App routes
 app.use('/', routes);
 
 // catch 404 and forward to error handler
