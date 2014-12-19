@@ -1,0 +1,13 @@
+//-
+	@file Defines a Intro mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+
+//- Definition
+mixin intro(content, signature)
+
+	.intro
+		p!= content
+		p.intro-signature!= signature
+			

@@ -1,0 +1,120 @@
+//-
+	@file Page instance: Post template 
+	@extends _page_default/_page_default
+
+
+//- Page dependencies
+include ../../organisms/_post/_post
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	//- Get post
+	- var post = posts.filter(function (post) { return post.uri == 'designing-an-edit-in-situ-cms' })[0]
+	- post.content = []
+	
+	
+	- post.content.push('<p>When I see the 1&amp;1 Internet \'free, easy to edit website\' adverts on TV, I half seethe with irritation, half shudder at yet another way for small businesses to make mediocre websites. Don\'t get me wrong, the concept, though not new, is great. But handing over templates with a blank space in the middle to stick some text and images isn\'t enough.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>A long-standing friend of mine -- a penpal from school, to be precise -- recently contacted me. She\'s in her final year of her Art degree at Cazenovia College, New York, and as part of their gallery show, her and her classmates must commission and manage their own website. There\'s an encouraging trend amongst creative curriculum for this kind of commercial aspect -- I think it\'s a great way to get artists to think about their work in a different context than the gallery space.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>Anyway, Lara asked if I\'d be able to help her out with such a website, and that she\'d mentioned me to some of her classmates and they\'d jumped at the idea (on the merit of my portfolio, rather than my British charm, I like to think). I gave her a quote, and after some discussion of student budgets and cans of baked beans, we decided that the most cost-effective way would be to produce a simple system that could be lightly re-skinned for each student..</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h2>To be or not to bespoke</h2>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>At this point I was considering which platform would be the best for rapid development (the gallery shows open in April; this was late February, and my work list was as long as the bill of rights, so time was tight.) I prefer Drupal over Wordpress in general for scalability and general awesomeness, but both sometimes seem a little overkill for a small brochure/gallery site. I recklessly decided instead to take a jump and do what I\'d wanted to do for a while: create a little CMS that allowed clients to edit all their content in situ -- i.e. no \'admin area\' or \'control panel -- just inline editing tools.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>Now, by \'edit their content\', I don\'t just mean add text and images. I wanted them to be able to do everything. If it moves, edit it. Well, you catch my drift: where there is a grid of items, drag and it shall be re-ordered, where there\'s a profile image, click and ye shall be presented with a file manager to choose a new one, where there is text -- click and you can edit it -- whether that\'s on a page or the teaser for a post on your blog index. I wanted it to have all the functionality of a good CMS -- content types for example -- in this case, projects, images, pages and blog posts, but be editable in an intuitive, non-back-office way.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h2>Tactile content</h2>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>I\'m not going to dive into the technicalities of the project, but what I did want to discuss is the decisions in how to make the interface as intuitive and friendly as possible. Each artist\'s website was basically going to present the same categories of content -- a set of projects with associated photos, supporting static pages such as an \'Artist Statement\' and a blog/news/upcoming section. Let\'s look at the controls:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h3>The projects</h3>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>I\'d proposed the artists\' work be presented on the homepage as a grid of images, one dynamically pulled from each project, along with the title. The only editing here would be re-ordering the projects, which was a simple drag deal using jQuery UI sortables, and deleting. For creation. I wanted to have the last item of the grid be a big \'add\' button, like so:')
+	
+	- post.content.push('<img src="http://itsravenous.com/a/uploads/blog/project_grid.png" alt="The projects thumbnails line up side by side in a 3 col grid, with the last space filled by an add button" title="" /></p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>I wanted to do this in a modular way in the backend (through something in the style of Drupal\'s hook_ functions) but I haven\'t quite yet mastered HMVC (modular collections of models, views and controllers) in Codeigniter yet, so I opted for a overlay admin bar similar to the one used by Wordpress as a compromise for content creation. I would really have loved to do this throughout the site though -- at the top of blog indexes (and tag, archive pages etc) and it\'s something I\'ll definitely be doing in the next version, for the ultimate \'contextual\' editor. The admin bar may stay, as it\'s useful to have a global view too.')
+	
+	- post.content.push('Each project has its own page, accessed as you\'d expect by clicking the relevant project on the homepage grid, containing the description and a grid of images linked to an enlarged view. The images each have their own sort and delete controls, and an \'add image\' button follows the grid (it didn\'t really seem to make sense to include it in the global admin bar).</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h3>Blog posts</h3>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>It turned out that the artists were more interested in a \'news\' style page than a regularly updated blog, so that removed the need for tagging and archiving, leaving me to focus on how best to let them edit the two different views -- list and single. I decided that as the news posts were going to be relatively spaced chronologically speaking, we didn\'t need sort functionality. What I did want to provide was the ability to customise the post teaser, rather than having it automatically generated from the first 200 characters of the post proper. So, a click of a little pencil icon by each post replaces the title and teaser with an textfield and textarea for changes to be made in. Hit save, and the post re-appears, with the new content in place. Nice and simple.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>The full post, however, needed more complex treatment. I wanted the artists to be able to write posts with aligned images and other rich stuff, but without giving them the full control of a standard Rich Text Editor like CKEditor (to discourage straight Word paste-ins). Thus I devised an editor that allowed adding of text blocks, images and videos, and allowed them to be individually dragged around to re-order, and aligned left and right:')
+	
+	- post.content.push('<img src="http://itsravenous.com/a/uploads/blog/editor.png" alt="" title="" /></p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>This allows future expansion, perhaps with blocks for mini-galleries, blog teasers, and other dynamic content, which gives the possibility for client-controlled posts and pages to be individual, lively and interactive while still being structured and not looking like a cut-and-paste code snippet operation.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>Naturally, the static pages used the same editor -- the only difference being they get a dedicated link in the main navigation. As the artists were all going for pretty much the same set of pages, all of which would need main nav links, I left re-ordering and opting out of the nav link for another day.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h2>Lessons learned</h2>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>As anyone who\'s written a CMS from the ground up will tell you, it was quite a stressful experience. Things we take for granted like image validation on upload, clean custom URLs, media management, caching -- these all have to be built from scratch, or imported from somewhere else and adapted. It\'s not the first time I\'ve done it, but the added complexities of front-end merging with backend made it a bit of a battle at times. The codebase is fine as it is, but I\'ll probably be doing some serious chopping and rewriting for my own sanity the next chance I get. But this isn\'t really about the backend, so here are my main take-aways from the project:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<ul>')
+	
+	- post.content.push('<li>Simplicity and obvious metaphors are key -- sounds obvious, but if the client has to interact with too many controls at once there\'s always a danger they\'ll get lost. I minimised this risk by strong colour and icon metaphors, along with consistent placement of certain types of controls -- the sort icon was always the first available, for example.</li>')
+	
+	- post.content.push('<li>Isolation of editing -- it can feel a bit loose and scary if you\'re just editing your live website on the fly, so whenever something was being edited, the rest of the website fell behind a semi-opaque overlay so that the piece being edited was foregrounded. I also had the admin bar slide up on such occasions. Though I say so myself, it looks slick.</li>')
+	
+	- post.content.push('<li>Clients need to see their site as users will -- I made as many controls as practical appear on hover/focus (except on mobile, for obvious reasons), so that the artists could make a change, hit save, and sit back and see the effect.</li>')
+	
+	- post.content.push('<li>Okay, so this one\'s kinda about the backend -- I\'ve always felt it\'s really important to have content in as discrete objects as possible -- so each page, image, relationship, product is it\'s own row in the database, to enable future contexts whether the content might need to be displayed in a different way, or ways. Brad Frost has written an excellent article on this over at A List Apart.</li>')
+	
+	- post.content.push('</ul>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>So that\'s my adventure with the in situ CMS (ISCMS?) for now -- I\'ll keep you posted on when the artists\' sites launch and any future developments. In any case, the artists from across the pond seem to be enjoying the content population, and that can only be a good sign.</p>')
+	
+	- post.content = post.content.join("\n");
+	- var page = {}
+	- page.id = "post"
+	- page.title = "Ravenous - " + post.title
+
+//- Content block
+block content
+	+post(post)

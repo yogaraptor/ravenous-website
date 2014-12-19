@@ -1,0 +1,51 @@
+/**
+ * @file Some simple grid mixins
+ * @author Tom Jenkins tom@itsravenous.com
+ */
+
+// Very simple, col-number based grid
+@mixin grid($cols) {
+	
+	font-size: 0;
+	
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		width: 100%/$cols;
+		font-size: $font-size-medium; // Restore font size
+	}
+}
+
+// Auto-distribute grid
+@mixin autogrid($width:auto) {
+	font-size: 0.1px;
+	text-align: justify;
+	
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		width: $width;
+		font-size: $font-size-medium; // Restore font size
+		text-align: left; // Restore text align
+	}
+
+	// Force justify of single-row grids
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+// Flex-box based grid
+@import "compass/css3/box";
+@mixin flex-grid ($align:stretch, $gutter:0) {
+	@include display-box;
+	@include box-orient(horizontal);
+	@include box-align($align);
+
+	> * {
+		@include box-flex(1);
+		margin-right: $gutter;
+	}
+}

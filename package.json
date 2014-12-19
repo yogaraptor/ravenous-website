@@ -1,9 +1,9 @@
 {
   "name": "itsravenous",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "~1.8.1",
@@ -11,9 +11,24 @@
     "debug": "~2.0.0",
     "email-validator": "^1.0.1",
     "express": "~4.9.0",
+    "ipware": "0.0.2",
     "jade": "~1.6.0",
     "morgan": "~1.3.0",
     "nodemailer": "^1.3.0",
-    "serve-favicon": "~2.1.3"
+    "serve-favicon": "~2.1.3",
+    "universal-analytics": "^0.3.6"
+  },
+  "devDependencies": {
+    "dom-storage": "^2.0.1",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^1.0.1",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-imagemin": "^0.9.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-remfallback": "0.0.5",
+    "grunt-svgmin": "^1.0.0"
   }
 }

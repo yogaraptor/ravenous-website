@@ -1,0 +1,410 @@
+//-
+	@file Page instance: Post template 
+	@extends _page_default/_page_default
+
+
+//- Page dependencies
+include ../../organisms/_post/_post
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	//- Get post
+	- var post = posts.filter(function (post) { return post.uri == 'sass-extend-and-presentational-semantics' })[0]
+	- post.content = []
+	
+	
+	- post.content.push('<p><ins datetime="2013-05-01"><em>Update 2013-05-01 - Last night I gave a talk based on this blog post at the fantastic <a href="http://fredup.github.io/manchester/">Manchester #FRED meetup</a>. You can see <a href="http://simonowendesign.co.uk/blog/2013/05/01/manchester-fred-gets-responsive/">the')
+	
+	- post.content.push('writeup</a> on Simon Owen\'s site, and you can also check out <a href="http://slid.es/itsravenous/sass-for-modular-and-responsive">the slides</a> if you like.</em></ins></p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>If you\'ve used SASS at all, you may be familiar with its wonderful <code>@extend</code> function. If not, here\'s a quick rundown. <code>@extend</code> takes a leaf from')
+	
+	- post.content.push('object-orientated programming and allows you to make a CSS rule \'inherit\' all the properties of another. Make sense? So you might write the following:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>.circle {')
+	
+	- post.content.push('    width: 200px;')
+	
+	- post.content.push('    height: 200px;')
+	
+	- post.content.push('    border-radius: 100px 100px;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('')
+	
+	- post.content.push('.sun {')
+	
+	- post.content.push('    @extend .circle;')
+	
+	- post.content.push('')
+	
+	- post.content.push('    background: yellow;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>Which SASS would compile into regular CSS as follows:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>.circle,')
+	
+	- post.content.push('.sun {')
+	
+	- post.content.push('    width: 200px;')
+	
+	- post.content.push('    height: 200px;')
+	
+	- post.content.push('    border-radius: 100px 100px;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('')
+	
+	- post.content.push('.sun {')
+	
+	- post.content.push('    background: yellow;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>The advantage of using <code>@extend</code> here is that you can look at the ruleset')
+	
+	- post.content.push('for .sun and instantly tell what it\'s supposed to achieve - it\'s a')
+	
+	- post.content.push('circle, with a yellow background. This is what I mean by <em>presentational ')
+	
+	- post.content.push('semantics</em> - the ability to write class names that represent exactly')
+	
+	- post.content.push('what they achieve.</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h2>Semantic classes in your markup, presentational classes in your SASS</h2>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>So how can we use this to write better HTML and CSS? With the rise of')
+	
+	- post.content.push('CSS frameworks over the last few years, it\'s not unusual to see')
+	
+	- post.content.push('presentational classes creeping into markup. You might, for instance,')
+	
+	- post.content.push('be using Twitter\'s <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> to')
+	
+	- post.content.push('get some nice button styles and a grid layout:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>&lt;section class="main-content eight columns"&gt;')
+	
+	- post.content.push('')
+	
+	- post.content.push('    &lt;h1&gt; Confirm purchase &lt;/h1&gt;')
+	
+	- post.content.push('    &lt;button class="btn btn-primary"&gt;OK&lt;/button&gt;')
+	
+	- post.content.push('    &lt;button class="btn btn-warning"&gt;Cancel&lt;/button&gt;')
+	
+	- post.content.push('')
+	
+	- post.content.push('&lt;/section&gt;')
+	
+	- post.content.push('')
+	
+	- post.content.push('&lt;aside class="secondary-content two columns"&gt;')
+	
+	- post.content.push('    ...some secondary content')
+	
+	- post.content.push('&lt;/aside&gt;')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>We all know these using classes like this is <strong>bad</strong>, but using a')
+	
+	- post.content.push('framework is often quicker and easier than doing "the right thing",')
+	
+	- post.content.push('especially when it comes to grids. So let\'s look at those grid classes')
+	
+	- post.content.push('first. I was quite late to the CSS grid scene, but the first time I used')
+	
+	- post.content.push('Bootstrap, it felt like I was back in 1999, coding with tables. So')
+	
+	- post.content.push('what\'s the <strong>right</strong> way to do this?</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>In vanilla CSS, you might write:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>.primary,')
+	
+	- post.content.push('.secondary {')
+	
+	- post.content.push('    float: left;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.primary {')
+	
+	- post.content.push('    width: 80%;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.secondary {')
+	
+	- post.content.push('    width: 20%;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>But when you need to apply grid sizes to a large number of different')
+	
+	- post.content.push('elements, your CSS file could get messy and unreadable, fast. Instead,')
+	
+	- post.content.push('with SASS:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>/* Base grid classes */')
+	
+	- post.content.push('.columns {')
+	
+	- post.content.push('    float: left;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.columns-eight {')
+	
+	- post.content.push('    width: 80%;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.columns-two {')
+	
+	- post.content.push('    width: 20%;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('')
+	
+	- post.content.push('/* Main layout */')
+	
+	- post.content.push('.primary {')
+	
+	- post.content.push('    @extend .columns;')
+	
+	- post.content.push('    @extend .columns-eight;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.secondary {')
+	
+	- post.content.push('    @extend .columns;')
+	
+	- post.content.push('    @extend .columns-eight;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>And, in fact, we can go one better - <code>@extend</code> supports chaining:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>/* Base grid classes */')
+	
+	- post.content.push('.columns {')
+	
+	- post.content.push('    float: left;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.columns-eight,')
+	
+	- post.content.push('.columns-two {')
+	
+	- post.content.push('    @extend .columns;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.columns-eight {')
+	
+	- post.content.push('    width: 80%;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.columns-two {')
+	
+	- post.content.push('    width: 20%;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('')
+	
+	- post.content.push('/* Main layout */')
+	
+	- post.content.push('.primary {')
+	
+	- post.content.push('    @extend .columns-eight;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('.secondary {')
+	
+	- post.content.push('    @extend .columns-two;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>So <code>.columns-eight</code> and <code>.columns-two</code> inherit the floating behaviour')
+	
+	- post.content.push('from <code>.columns</code>, and <code>.primary</code> and <code>.secondary</code> inherit that floating')
+	
+	- post.content.push('behaviour <em>and</em> their width from the <code>.columns-eight</code> and <code>.columns-two</code>')
+	
+	- post.content.push('classes, respectively. </p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>But grids are pretty boring, and you\'ll probably want to use a library')
+	
+	- post.content.push('like <a href="http://susy.oddbird.net/">SUSY</a> to handle them, rather than')
+	
+	- post.content.push('re-inventing a very complex wheel. Instead, why not gleefully write all')
+	
+	- post.content.push('those presentational classes you\'ve secretly wanted to write')
+	
+	- post.content.push('(and perhaps have written!) over the years:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>.big-red-box {')
+	
+	- post.content.push('    border-radius: 5px;')
+	
+	- post.content.push('    border: 2px solid red')
+	
+	- post.content.push('    background: #ffee00;')
+	
+	- post.content.push('    font-size: 20px;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('')
+	
+	- post.content.push('.drop-shadow {')
+	
+	- post.content.push('    box-shadow: 0 0 5px #000;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>and simply assign them to the elements you like with <code>@extend</code>:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>.message {')
+	
+	- post.content.push('    @extend .big-red-box;')
+	
+	- post.content.push('    @extend .drop-shadow;')
+	
+	- post.content.push('}')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>meaning you avoid this:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>&lt;div class="message big-red-box drop-shadow"&gt;')
+	
+	- post.content.push('    SASS rocks!')
+	
+	- post.content.push('&lt;/div&gt;')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>and can instead just write this:</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<pre><code>&lt;div class="message"&gt;')
+	
+	- post.content.push('    SASS rocks!')
+	
+	- post.content.push('&lt;/div&gt;')
+	
+	- post.content.push('</code></pre>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>Isn\'t that awesome?</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>One of my favourite uses of <code>@extend</code> is adding the \'clearfix\' hack to elements - no more class="cf" all over my beautiful markup!</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>One of the most overlooked implications is the re-skinnability (totally a word) that this approach affords a project. If you\'ve built an app or product')
+	
+	- post.content.push('which you want to theme/style completely differently depending on who you\'re selling it to, you don\'t have to worry about presentational classes in the markup')
+	
+	- post.content.push('getting in the way - you can potentially keep the exact same markup and just change your SASS, and by, a-ha, extension, your CSS. It also makes \'reskins\'')
+	
+	- post.content.push('of websites twelve months down the line a lot easier!</p>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<h2>Go forth and <code>@extend</code>!</h2>')
+	
+	- post.content.push('')
+	
+	- post.content.push('<p>Of course, as with all SASS, you could do this with regular CSS, but why would you? SASS means you can structure your CSS in an object-oriented way, which is')
+	
+	- post.content.push('great if you\'re following an OOCSS pattern like Jonathan Snook\'s <a href="http://smacss.com/">SMACSS</a>. Go ahead and be free to write beautifully semantic markup')
+	
+	- post.content.push('without any horrible presentation classes, but keep those <em>presentational semantics</em> visible in your SASS.</p>')
+	
+	- post.content = post.content.join("\n");
+	- var page = {}
+	- page.id = "post"
+	- page.title = "Ravenous - " + post.title
+
+//- Content block
+block content
+	+post(post)

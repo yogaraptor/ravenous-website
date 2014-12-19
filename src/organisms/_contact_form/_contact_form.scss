@@ -23,16 +23,16 @@
 		transition: all 0.2s;
 	}
 
-	&.is-active {
+	&.is-active,
+	&.is-filled {
 		.label-text {
-			top: -2.5em;
+			top: -1.5em;
 			color: #303030;
 		}
 	}
-	&.is-filled {
+	&.is-invalid {
 		.label-text {
-			color: transparent;
-			z-index: -1;
+			color: $error-fg;
 		}
 	}
 
@@ -53,7 +53,6 @@
 		transform: translate3d(0, -2.5em, 0);
 	}
 }
-
 
 
 

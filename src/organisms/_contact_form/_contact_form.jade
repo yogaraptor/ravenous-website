@@ -1,0 +1,46 @@
+//-
+	@file Defines a Contact form mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+
+//- Definition
+mixin contact_form(submission, missingFields, invalidEmail)
+
+	- var nameClass = !submission.name && missingFields ? 'is-invalid' : '';
+	- if (submission.name) nameClass += ' is-filled';
+	- var emailClass = invalidEmail || (!submission.email && missingFields) ? 'is-invalid' : '';
+	- if (submission.email) emailClass += ' is-filled';
+	- var subjectClass = !submission.subject && missingFields ? 'is-invalid' : '';
+	- if (submission.subject) subjectClass += ' is-filled';
+	- var phoneClass = submission.message ? 'is-filled' : '';
+	- var messageClass = !submission.message && missingFields ? 'field-message is-invalid' : 'field-message';
+	- if (submission.message) messageClass += ' is-filled';
+
+	form.form-contact(attributes)
+		fieldset
+			ul
+				li
+					label(for='name', class=nameClass)
+						.label-text Name*
+						input#name(type='text', name='name', size='30', value=submission.name)
+				li
+					label(for='email', class=emailClass)
+						.label-text Email*
+						input#email(type='text', name='email', size='30', value=submission.email)
+				li
+					label(for='phone', class=phoneClass)
+						.label-text Phone
+						input#phone(type='text', name='phone', size='30', value=submission.phone)
+		fieldset
+			ul
+				li
+					label(for='subject', class=subjectClass)
+						.label-text Subject*
+						input#subject(type='text', name='subject', size='30', value=submission.subject)
+				li
+					label(for='message', class=messageClass)
+						.label-text Message*
+						textarea#message(name='message') #{submission.message}
+		button(name='submit', value='submit')  Send Missive! 
+

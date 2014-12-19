@@ -1,0 +1,12 @@
+//-
+	@file Defines a Project mixin
+	@author Tom Jenkins tom@itsravenous.com
+
+//- Dependencies
+
+//- Definition
+mixin project(project)
+
+	article.project
+		h1!= project.title
+		.project-content!= project.content

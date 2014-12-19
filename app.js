@@ -1,10 +1,15 @@
+var config = require('./config');
 var express = require('express');
+var url = require('url');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var ua = require('universal-analytics');
+var getIP = require('ipware')().get_ip;
+var Storage = require('dom-storage');
+var localStorage = new Storage('./storage.json');
 var routes = require('./routes/index');
 
 var app = express();
@@ -13,14 +18,31 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
+// Analytics
+app.use(function (req, res, next) {
+    var ipInfo = getIP(req);
+    if (ipInfo.clientIpRoutable) {
+        var urlParts = url.parse(req.url, true);
+        var cidKey = 'ua_'+ipInfo.clientIp;
+        var cid = localStorage.getItem(cidKey);
+        if (cid) {
+            var visitor = ua(config.analyticsCode, cid);
+        } else {
+            var visitor = ua(config.analyticsCode);
+            localStorage.setItem(cidKey, visitor.cid);
+        }
+        visitor.pageview(urlParts.pathname).send();
+    }
+    next();
+});
+// App routes
 app.use('/', routes);
 
 // catch 404 and forward to error handler

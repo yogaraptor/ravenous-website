@@ -1,0 +1,24 @@
+//-
+	@file Page instance: Blog template 
+	@extends _page_default/_page_default
+
+//- Page dependencies
+include ../../molecules/_post_teaser/_post_teaser
+
+//- Page template
+extends ../../templates/_page_default/_page_default
+
+//- Page variables to pass to template
+block page_vars
+	- var page = {}
+	- page.id = "blog"
+	- page.title = "Blog - Ravenous"
+	- page.section = "blog"
+	- page.description = "Musings and experiments in front-end and NodeJS."
+
+
+//- Content block
+block content
+
+	each post in posts
+		+post_teaser(post.title, post.uri, post.teaser, post.date)

@@ -1,0 +1,12 @@
+/**
+ * @file Provides a mixin to clearfix
+ */
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
