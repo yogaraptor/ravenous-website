@@ -1,5 +1,12 @@
 module.exports = [
 	{
+		"title": "Two weeks was all I needed",
+		"teaser": "I wanted to share the message of the power of the luxury of a couple of weeks free from the demands of clients, money, and reality in general. I didn't lock myself away in a log cabin somewhere; I used the same office I do every day. It was just that freedom to experiment and work at a different pace that allowed me to quickly crack a nut I'd long been hammering away at.",
+		"uri": "two-weeks-all-i-needed",
+		"file": "posts/two-weeks.md",
+		"date": "2014-12-19"
+	},
+	{
 		"title": "Element queries: just use them",
 		"teaser": "Element queries allow you to write layout rules for components that react to the size of the component's root element, rather than the viewport, meaning you can create components that are truly reusable and can be placed anywhere in a page's layout and \"just work\".",
 		"uri": "element-queries-just-use-them",
