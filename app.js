@@ -7,7 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ua = require('universal-analytics');
-
+var getIP = require('ipware')().get_ip;
+var Storage = require('dom-storage');
+var localStorage = new Storage('./storage.json');
 var routes = require('./routes/index');
 
 var app = express();
@@ -20,15 +22,26 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// Analytics
-app.use(function (req, res, next) {
-    var urlParts = url.parse(req.url, true);
-    var visitor = ua(config.analyticsCode);
-    visitor.pageview(urlParts.pathname).send();
-    next();
-});
+
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
+// Analytics
+app.use(function (req, res, next) {
+    var ipInfo = getIP(req);
+    if (ipInfo.clientIpRoutable) {
+        var urlParts = url.parse(req.url, true);
+        var cidKey = 'ua_'+ipInfo.clientIp;
+        var cid = localStorage.getItem(cidKey);
+        if (cid) {
+            var visitor = ua(config.analyticsCode, cid);
+        } else {
+            var visitor = ua(config.analyticsCode);
+            localStorage.setItem(cidKey, visitor.cid);
+        }
+        visitor.pageview(urlParts.pathname).send();
+    }
+    next();
+});
 // App routes
 app.use('/', routes);
 

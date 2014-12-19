@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 
 	// Write component dependency file for require to read in at runtime (dev) or build time (release)
 	if (buildType == 'dev') {
-		grunt.file.write("dev/js/componentList.json", JSON.stringify(componentsList));
+		grunt.file.write(env.dest+"/js/componentList.json", JSON.stringify(componentsList));
 	} else if (buildType == 'release') {
 		grunt.file.write("src/global-js/componentList.json", JSON.stringify(componentsList));
 	}
