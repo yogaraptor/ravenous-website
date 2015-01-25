@@ -9,7 +9,7 @@ This was, in fact, perfect timing. For the last few months I'd been working on a
 
 The two quiet weeks leading up to Christmas have given me the opportunity to experiement a bit and take a different approach to the problem. I've ditched my manual port and instead turned to Mozilla's [Emscripten](http://kripken.github.io/emscripten-site/) which transpiles native C/C++ code to Javascript. I came across Emscripten when considering a potential solution to the performance problem: ASM JavaScript. ASM is a subset of JavaScript that allows browsers who recognise it to assume static typing and ahead-of-time (as opposed to just-in-time) compilation. Emscripten, naturally, compiles to ASM JavaScript by default.
 
-Long story short, I now have the algorithm [ported to JS](https://github.com/itsravenous/i3s-asm) and producing the same results as the original for known test matchings.
+Long story short, I now have the algorithm ported to JS and producing the same results as the original for known test matchings.
 
 I'll be posting in the new year about my intentions for the port, as well as more about my experiences with Emscripten, but just now I wanted simply to share the message of the power of the luxury of a couple of weeks free from the demands of clients, money, and reality in general. I didn't lock myself away in a log cabin somewhere; I used the same office I do every day. It was just that freedom to experiment and work at a different pace that allowed me to quickly crack a nut I'd long been hammering away at.
 
