@@ -27,15 +27,6 @@ module.exports = [
 		"file": "projects/futr.md"
 	},
 	{
-		"id": "copland-dance",
-		"title": "Emma Copland website",
-		"images": [
-			"copland.png"
-		],
-		"uri": "http://coplanddance.co.uk",
-		"file": "projects/copland.md"
-	},
-	{
 		"id": "atomic-component-engine",
 		"title": "Atomic Component Engine",
 		"images": [
@@ -52,5 +43,14 @@ module.exports = [
 		],
 		"uri": "http://github.com/itsravenous/i3s-js",
 		"file": "projects/i3s-js.md"
-	}
+	},
+        {
+                "id": "copland-dance",
+                "title": "Emma Copland website",
+                "images": [
+                        "copland.png"
+                ],
+                "uri": "http://coplanddance.co.uk",
+                "file": "projects/copland.md"
+        }
 ]
