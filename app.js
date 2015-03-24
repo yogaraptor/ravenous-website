@@ -23,6 +23,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// RIP Terry
+app.use(function (req, res, next) {
+    res.set('X-Clacks-Overhead', 'GNU Terry Pratchett');
+    next();
+});
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 // Analytics
