@@ -15,6 +15,12 @@
 	font-size: $font-size-large;
 	color: $midgrey;
 }
+
+.post-content figure {
+	caption {
+		font-family: $font-family-alt2;
+	}
+}
 .post-content {
 
 	// Styles
@@ -45,6 +51,15 @@
 	h2 {
 		margin-top: $wsunit * 1.5;
 		margin-bottom: $wsunit;
+	}
+	figure {
+		margin: 0 0 2rem 2rem;
+	}
+	@media screen and (min-width: 40rem) {
+		figure {
+			float: right;
+			width: 50%;
+		}
 	}
 }
 

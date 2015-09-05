@@ -1,5 +1,12 @@
 module.exports = [
 	{
+		"title": "Hand-lettered fonts in the jungles of Belize",
+		"teaser": "The Belize Zoo began in 1981 when Sharon Matola, out of money and out of a job, painted the words \"Belize Zoo\" on a piece of wood and rammed it into the dirt on the side of the highway. Her lettering is very distinctive, a sort of cross between the typography you might find on a Jimi Hendrix poster and the hurried scrawl of a written-on-the-day greetings card. Almost thirty-five years after the zoo opened, she still paints the odd sign, although they are mostly done by the maintenance team. All the signs, however, retain her signature lettering; it has become part of the zoo's identity.",
+		"uri": "hand-lettered-fonts-jungles-of-belize",
+		"file": "posts/belize.md",
+		"date": "2015-08-21"
+	},
+	{
 		"title": "Two weeks was all I needed",
 		"teaser": "I wanted to share the message of the power of the luxury of a couple of weeks free from the demands of clients, money, and reality in general. I didn't lock myself away in a log cabin somewhere; I used the same office I do every day. It was just that freedom to experiment and work at a different pace that allowed me to quickly crack a nut I'd long been hammering away at.",
 		"uri": "two-weeks-all-i-needed",
