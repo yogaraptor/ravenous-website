@@ -53,12 +53,13 @@
 		margin-bottom: $wsunit;
 	}
 	figure {
-		margin: 0 0 2rem 2rem;
+		margin-bottom: 2rem;
 	}
 	@media screen and (min-width: 40rem) {
 		figure {
 			float: right;
 			width: 50%;
+			margin-left: 2rem;
 		}
 	}
 }
