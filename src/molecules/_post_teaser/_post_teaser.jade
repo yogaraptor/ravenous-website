@@ -9,7 +9,7 @@ mixin post_teaser(title, uri, teaser, date)
 	- datef = new Date(date).toString().split(' ').slice(0, 4).join(' ');
 
 	article.post-teaser
-		a(href='blog/'+uri)
+		a(href='/blog/'+uri)
 			time.post-teaser-date(pubdate=date) #{datef}
 			h1.post-teaser-title!= title
 
