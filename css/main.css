@@ -138,46 +138,33 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   gap: 1rem;
 }
+.button-list li {
+  margin: 0;
+}
+.button-list .button {
+  display: block;
+}
 .button {
-  font-family: "TallysFont", serif;
-  font-weight: normal;
-}
-
-p,
-li {
-  margin: 0 0 1em 0;
-  font-family: "TallysFont", serif;
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 1.5;
-}
-
-p em,
-li em {
-  font-family: "Libre Baskerville", serif;
-  font-size: 75%;
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  img[src*=".svg"] {
-    width: 100%;
-  }
-}
-
-.button {
-  display: inline-block;
   position: relative;
   border: none;
-  font-size: 2em;
+  font-family: "TallysFont", serif;
+  font-weight: normal;
   border: none;
   background: #202020;
   color: #fff;
   transition: all 0.2s;
   padding: 0.5em;
+  text-align: center;
+}
+@media screen and (min-width: 40rem) {
+  .button {
+    font-size: 2rem;
+  }
 }
 
 .button:hover,
@@ -207,6 +194,28 @@ li em {
 .button > * {
   position: relative;
   z-index: 1;
+}
+
+
+p,
+li {
+  margin: 0 0 1em 0;
+  font-family: "TallysFont", serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+p em,
+li em {
+  font-family: "Libre Baskerville", serif;
+  font-size: 75%;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"] {
+    width: 100%;
+  }
 }
 
 .content-img {
