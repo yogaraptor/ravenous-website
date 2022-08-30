@@ -1,1 +1,0 @@
-iOS & Android app for <abbr title="Maldives Whale Shark Research Programme">MWSRP</abbr>. Follow your favourite shark across the Maldives and see amazing photos and videos from shark encounters.

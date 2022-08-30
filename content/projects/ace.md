@@ -1,1 +1,0 @@
-Opinionated build system for creating component-based websites and applications. Based on Grunt, Yeoman, with strong promotion of element queries.

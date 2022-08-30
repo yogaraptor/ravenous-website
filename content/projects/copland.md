@@ -1,1 +1,0 @@
-Fully responsive website for Emma's Belfast Dance & Drama school.
