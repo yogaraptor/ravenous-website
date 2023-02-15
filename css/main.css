@@ -116,7 +116,7 @@ legend {
 html {
   margin: 0;
   padding: 0;
-  background: #fff url("../img/bg-page.jpg");
+  background: #fff url("../img/bg-page.webp");
 }
 
 a {
@@ -180,14 +180,14 @@ img {
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: url("../img/bg-frame-nw.png") 0 0 no-repeat,
-    url("../img/bg-frame-ne.png") 100% 0 no-repeat,
-    url("../img/bg-frame-se.png") 100% 100% no-repeat,
-    url("../img/bg-frame-sw.png") 0 100% no-repeat,
-    url("../img/bg-frame-ns.png") 0 0 repeat-x,
-    url("../img/bg-frame-ns.png") 0 100% repeat-x,
-    url("../img/bg-frame-ew.png") 100% 0 repeat-y,
-    url("../img/bg-frame-ew.png") 0 0 repeat-y;
+  background: url("../img/bg-frame-nw.webp") 0 0 no-repeat,
+    url("../img/bg-frame-ne.webp") 100% 0 no-repeat,
+    url("../img/bg-frame-se.webp") 100% 100% no-repeat,
+    url("../img/bg-frame-sw.webp") 0 100% no-repeat,
+    url("../img/bg-frame-ns.webp") 0 0 repeat-x,
+    url("../img/bg-frame-ns.webp") 0 100% repeat-x,
+    url("../img/bg-frame-ew.webp") 100% 0 repeat-y,
+    url("../img/bg-frame-ew.webp") 0 0 repeat-y;
   content: "";
 }
 
@@ -231,14 +231,14 @@ li em {
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: url("../img/bg-frame-nw.png") 0 0 no-repeat,
-    url("../img/bg-frame-ne.png") 100% 0 no-repeat,
-    url("../img/bg-frame-se.png") 100% 100% no-repeat,
-    url("../img/bg-frame-sw.png") 0 100% no-repeat,
-    url("../img/bg-frame-ns.png") 0 0 repeat-x,
-    url("../img/bg-frame-ns.png") 0 100% repeat-x,
-    url("../img/bg-frame-ew.png") 100% 0 repeat-y,
-    url("../img/bg-frame-ew.png") 0 0 repeat-y;
+  background: url("../img/bg-frame-nw.webp") 0 0 no-repeat,
+    url("../img/bg-frame-ne.webp") 100% 0 no-repeat,
+    url("../img/bg-frame-se.webp") 100% 100% no-repeat,
+    url("../img/bg-frame-sw.webp") 0 100% no-repeat,
+    url("../img/bg-frame-ns.webp") 0 0 repeat-x,
+    url("../img/bg-frame-ns.webp") 0 100% repeat-x,
+    url("../img/bg-frame-ew.webp") 100% 0 repeat-y,
+    url("../img/bg-frame-ew.webp") 0 0 repeat-y;
   content: "";
 }
 
@@ -307,7 +307,7 @@ a:link {
   width: 307px;
   height: 254px;
   margin: 0 auto;
-  background: url("../img/logo.png") no-repeat;
+  background: url("../img/logo.webp") no-repeat;
   text-indent: -9999px;
 }
 
@@ -426,7 +426,7 @@ figure .content-img {
 
 .section {
   padding-top: 2em;
-  background: url("../img/bg-separator.png") 50% 0 no-repeat;
+  background: url("../img/bg-separator.webp") 49% 0 no-repeat;
 }
 
 .section .section-heading {
